@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Edit Application</h1>
+
+<form method="POST">
+
+    <p>
+        Company Name<br>
+        <input type="text" name="company" value="{{ job[1] }}" required>
+    </p>
+
+    <p>
+        Position<br>
+        <input type="text" name="position" value="{{ job[2] }}" required>
+    </p>
+
+    <p>
+        Date Applied<br>
+        <input type="date" name="date_applied" value="{{ job[3] }}" required>
+    </p>
+
+    <p>
+        Status<br>
+        <select name="status">
+            <option value="Applied" {% if job[4] == "Applied" %}selected{% endif %}>Applied</option>
+            <option value="Interview" {% if job[4] == "Interview" %}selected{% endif %}>Interview</option>
+            <option value="Offer" {% if job[4] == "Offer" %}selected{% endif %}>Offer</option>
+            <option value="Rejected" {% if job[4] == "Rejected" %}selected{% endif %}>Rejected</option>
+        </select>
+    </p>
+
+    <p>
+        Notes<br>
+        <textarea name="notes">{{ job[5] }}</textarea>
+    </p>
+
+    <button type="submit">Update Application</button>
+
+</form>
+
+{% endblock %}

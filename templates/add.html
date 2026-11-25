@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Add Application</h1>
+
+<form method="POST">
+
+    <p>
+        Company Name<br>
+        <input type="text" name="company" required>
+    </p>
+
+    <p>
+        Position<br>
+        <input type="text" name="position" required>
+    </p>
+
+    <p>
+        Date Applied<br>
+        <input type="date" name="date_applied" required>
+    </p>
+
+    <p>
+        Status<br>
+        <select name="status">
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+        </select>
+    </p>
+
+    <p>
+        Notes<br>
+        <textarea name="notes"></textarea>
+    </p>
+
+    <button type="submit">Save Application</button>
+
+</form>
+
+{% endblock %}

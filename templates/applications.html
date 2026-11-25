@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Applications</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Date Applied</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for job in jobs %}
+    <tr>
+        <td>{{ job[0] }}</td>
+        <td>{{ job[1] }}</td>
+        <td>{{ job[2] }}</td>
+        <td>{{ job[3] }}</td>
+        <td>{{ job[4] }}</td>
+
+        <td>
+            <a href="{{ url_for('edit', id=job[0]) }}">
+                Edit
+            </a>
+        </td>
+
+        <td>
+            <a href="{{ url_for('delete', id=job[0]) }}"
+               onclick="return confirm('Are you sure?');">
+                Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

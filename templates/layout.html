@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+
+    <nav>
+        <a href="/">Dashboard</a>
+
+        <a href="/add">
+            Add Application
+        </a>
+
+        <a href="/applications">
+            Applications
+        </a>
+
+        <a href="/stats">
+            Statistics
+        </a>
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
